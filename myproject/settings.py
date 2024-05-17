@@ -25,7 +25,13 @@ SECRET_KEY = 'django-insecure-v3+xgx9z588kmlq&*0v!e_n1p7=+qkjqk=+cx^ia1sew3m41kk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
+# Directory where collectstatic will collect static files for deployment
+STATIC_ROOT = './staticfiles'
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,6 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
 # Enable WhiteNoise to serve static files
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ROOT_URLCONF = 'myproject.urls'
